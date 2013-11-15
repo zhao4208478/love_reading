@@ -43,7 +43,6 @@ import com.google.zxing.client.android.ViewfinderView;
 import com.google.zxing.client.android.camera.CameraManager;
 import com.example.love_reading.R;
 import com.example.love_reading.MainActivity;
-import com.example.love_reading.util.DataUtil;
 
 
 public final class CaptureActivityPortrait extends Activity implements
@@ -295,14 +294,13 @@ public final class CaptureActivityPortrait extends Activity implements
 		tv.setText("(按back键重扫)结果:" + content);
 		r.setVisibility(View.VISIBLE);
 
-		DataUtil dataUtil = new DataUtil();
-		dataUtil.setId(content);
 		// 跳转到显示信息的界面
 		Intent intent = new Intent(CaptureActivityPortrait.this,
 				MainActivity.class);
 			intent.putExtra("bookId", content);
 			startActivity(intent);
 		Log.i(tag, "result:" + content);
+		startActivity();
 	}
 
 	private void handleDecodeExternally(Result rawResult, Bitmap barcode) {
@@ -370,5 +368,9 @@ public final class CaptureActivityPortrait extends Activity implements
 	public void drawViewfinder() {
 		viewfinderView.drawViewfinder();
 	}
+	
+    private void startActivity(){
+    	finish();
+    }
 }
 
