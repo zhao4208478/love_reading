@@ -1,7 +1,13 @@
 package com.example.love_reading;
 
+import java.io.File;
+
+import com.example.love_reading.sql.SQLiteHelper;
+import com.example.love_reading.MainActivity;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.widget.ImageView;
@@ -39,10 +45,12 @@ public class BookView extends Activity {
         summary.setText(book.getSummary());
         cover.setImageBitmap(book.getBitmap());
     }
+        
     
   //·µ»Ø¼ü´¦Àí
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
+        	
                 finish();
                 return true;
         }

@@ -43,6 +43,7 @@ import com.google.zxing.client.android.ViewfinderView;
 import com.google.zxing.client.android.camera.CameraManager;
 import com.example.love_reading.R;
 import com.example.love_reading.MainActivity;
+import com.example.love_reading.exit;
 
 
 public final class CaptureActivityPortrait extends Activity implements
@@ -101,7 +102,7 @@ public final class CaptureActivityPortrait extends Activity implements
 	@Override
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
-
+		exit.getInstance().addActivity(this);
 		Window window = getWindow();
 		window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
@@ -301,6 +302,7 @@ public final class CaptureActivityPortrait extends Activity implements
 			startActivity(intent);
 		Log.i(tag, "result:" + content);
 		startActivity();
+		exit.getInstance().exit();
 	}
 
 	private void handleDecodeExternally(Result rawResult, Bitmap barcode) {

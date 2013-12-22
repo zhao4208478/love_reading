@@ -15,6 +15,8 @@ public class BookInfo implements Parcelable {
     private String mPublishDate="";
     private String mISBN="";
     private String mSummary="";
+    private String mPrice="";
+    private String mPages="";
 
     public void setTitle(String Title)
     {
@@ -44,6 +46,14 @@ public class BookInfo implements Parcelable {
     {
         mSummary=Summary;
     }
+    public void setPrice(String Price)
+    {
+        mPrice=Price;
+    }
+    public void setPages(String Pages)
+    {
+        mPages=Pages;
+    }
 
     public String getTitle()
     {
@@ -72,9 +82,17 @@ public class BookInfo implements Parcelable {
     }
     public String getSummary()
     {
-        return mSummary;
+    	return mSummary;
     }
-
+    public String getPrice()
+    {
+        return mPrice;
+    }
+    public String getPages()
+    {
+        return mPages;
+    }
+    
     public static final Parcelable.Creator<BookInfo> CREATOR = new Creator<BookInfo>() {
         public BookInfo createFromParcel(Parcel source) {
             BookInfo bookInfo = new BookInfo();
@@ -85,6 +103,8 @@ public class BookInfo implements Parcelable {
             bookInfo.mPublishDate = source.readString();
             bookInfo.mISBN = source.readString();
             bookInfo.mSummary = source.readString();
+            bookInfo.mPrice = source.readString();
+            bookInfo.mPages = source.readString();
             return bookInfo;
         }
         public BookInfo[] newArray(int size) {
@@ -102,6 +122,8 @@ public class BookInfo implements Parcelable {
         dest.writeString(mPublishDate);
         dest.writeString(mISBN);
         dest.writeString(mSummary);
+        dest.writeString(mPrice);
+        dest.writeString(mPages);
     }
 
 }

@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/back2">
+
 <LinearLayout
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
     <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/bookview_title"
-            android:text=""
+            android:text="title"
             android:layout_gravity="center|bottom|left|right|top"
             android:textColor="#000000"
             android:textSize="30px"
@@ -22,41 +25,63 @@
                   android:layout_marginTop="10px"
                   android:paddingLeft="20px">
         <ImageView
-                android:layout_width="150px"
-                android:layout_height="170px"
+                android:layout_width="200px"
+                android:layout_height="230px"
                 android:id="@+id/bookview_cover"/>
         <LinearLayout
                       android:orientation="vertical"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:layout_marginLeft="20px">
+                      android:layout_marginLeft="15px">
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/bookview_author"
+                    android:layout_marginTop="10px"
                     android:text="作者"
-                    android:textSize="25px"/>
+                    android:textSize="15px"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/bookview_publisher"
                     android:text="出版社"
-                    android:layout_marginTop="5px"
-                    android:textSize="25px"/>
+                    android:layout_marginTop="10px"
+                    android:textSize="15px"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/bookview_publisherdate"
                     android:text="时间"
-                    android:layout_marginTop="5px"
-                    android:textSize="25px"/>
+                    android:layout_marginTop="10px"
+                    android:textSize="15px"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/bookview_isbn"
                     android:text="ISBN"
-                    android:layout_marginTop="5px"
-                    android:textSize="25px"/>
+                    android:layout_marginTop="10px"
+                    android:textSize="15px"/> 
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bookview_price"
+                    android:text="price"
+                    android:layout_marginTop="10px"
+                    android:textSize="15px"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bookview_pages"
+                    android:text="pages"
+                    android:layout_marginTop="10px"
+                    android:textSize="15px"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bookview_now"
+                    android:text="书签"
+                    android:layout_marginTop="10px"
+                    android:textSize="15px"/>
         </LinearLayout>
     </LinearLayout>
     <TextView
@@ -64,15 +89,47 @@
             android:layout_height="wrap_content"
             android:text="内容介绍"
             android:gravity="center_horizontal"
-            android:textSize="28px"
+            android:textSize="20px"
             android:layout_marginTop="10px"/>
     <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="具体内容"
+            android:textSize="20px"
             android:layout_marginTop="10px"
             android:paddingLeft="20px"
             android:paddingRight="20px"
             android:id="@+id/bookview_summary"/>
+     <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        
+     <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+        <ImageButton
+            android:id="@+id/book_read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/yuedujilu"
+            android:layout_gravity="center"/>
+     </LinearLayout>
+     
+     <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+        <ImageButton
+             android:id="@+id/book_show"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/ganwu"
+             android:layout_gravity="center"/>
+     </LinearLayout>
+     </LinearLayout>      
 </LinearLayout>
 </ScrollView>

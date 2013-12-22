@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/back2">
+   <TextView
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/bookplan_title"
+       android:text="title"
+       android:layout_gravity="center|bottom|left|right|top"
+       android:textColor="#000000"
+       android:textSize="30px"
+       android:gravity="center_horizontal"/>
+   
+   <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal" >
+
+            <TextView
+                android:text="书名"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="起始页数" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal" >
+
+            <TextView
+            android:text="结束页数"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="时间" />
+
+        </LinearLayout>
+        
+    </LinearLayout>
+   <ListView
+        android:id="@+id/bookplan_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:cacheColorHint="#00000000"
+        android:divider="#00000000"
+        android:scrollbars="none" />
+</LinearLayout>

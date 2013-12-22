@@ -36,7 +36,7 @@
             android:layout_alignParentBottom="true"
             android:autoLink="all"
             android:gravity="center"
-            android:text="(扫描完成后，按back键重扫)结果"
+            android:text="扫描成功后会自动进行下一步，返回请按返回键"
             android:textSize="18px" />
     </RelativeLayout>
 

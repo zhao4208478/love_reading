@@ -2,11 +2,13 @@ package com.example.love_reading.util;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.example.love_reading.BookInfo;
+import com.example.love_reading.sql.SQLiteHelper;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -16,13 +18,13 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class DataUtil {
+   private String tag = DataUtil.this.getClass().getSimpleName();
    public static String Download(String urlstr)
    {
        String result="";
        try{
            URL url=new URL(urlstr);
            URLConnection connection =url.openConnection();
-
            String line;
            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream(),"UTF-8"));
            while ((line = in.readLine()) != null) {
@@ -39,6 +41,7 @@ public class DataUtil {
         BookInfo info=new BookInfo();
         try{
             JSONObject mess=new JSONObject(str);
+            Log.i(tag, "allmeg: "+mess);
             info.setTitle(mess.getString("title"));
             info.setBitmap(DownloadBitmap(mess.getString("image")));
             info.setAuthor(parseJSONArraytoString(mess.getJSONArray("author")));
@@ -46,7 +49,9 @@ public class DataUtil {
             info.setPublishDate(mess.getString("pubdate"));
             info.setISBN(mess.getString("isbn13"));
             info.setSummary(mess.getString("summary"));
-
+            info.setPrice(mess.getString("price"));           
+            info.setPages(mess.getString("pages"));  
+            
         }catch (Exception e) {
             e.printStackTrace();
         }
